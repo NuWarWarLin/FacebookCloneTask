@@ -18,8 +18,22 @@ class PostsController < ApplicationController
         end
      end
 
-     def show
+    def show
         @post = Post.find(params[:id])
       end
+
+    def edit
+        @post = Post.find(params[:id])
+    end
+
+    def update
+        @post = Post.find(params[:id])
+        if @post.update(params.require(:post).permit(:title, :description))
+           flash[:notice] = "Post was updated successfully."
+           redirect_to @post
+        else 
+          render 'edit' 
+        end
+    end
 
 end
