@@ -14,7 +14,8 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.description %></td>
-        <td>PlaceHolder</td>
+        <td><%= link_to 'Show', post_path(post) %></td>
+        <td><%= link_to 'Delete', post_path(post), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
