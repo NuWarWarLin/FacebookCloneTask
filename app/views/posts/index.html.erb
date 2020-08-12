@@ -1,4 +1,4 @@
-<h1>Articles Lisiting page</h1>
+<h1>Posts Lisiting page</h1>
 
 <table>
   <thead>
@@ -9,11 +9,13 @@
       </tr>
   </thead>
 
-  <tbody>
+<tbody>
+     <% @posts.each do|post|%>
       <tr>
-        <td>title</td>
-        <td>description</td>
-        <td>placeholder</td>
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td>PlaceHolder</td>
       </tr>
+    <% end %>
   </tbody>
 </table>
