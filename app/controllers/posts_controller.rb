@@ -10,16 +10,13 @@ class PostsController < ApplicationController
     
     def create
         @post = Post.new(post_params)
-        if params[:back]
-          render 'new'
-        else
+        @post.user = User.first
           if @post.save
             flash[:notice] = "Posts was created successfully."
             redirect_to posts_path
           else
             render 'new'
           end
-        end
      end
 
     def show
