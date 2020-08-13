@@ -15,8 +15,8 @@
         <td><%= post.title %></td>
         <td><%= post.description %></td>
         <td><%= link_to 'Show', post_path(post) %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %></td>
+        <td><%= link_to 'edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete the data?"} %></td>
       </tr>
     <% end %>
   </tbody>
