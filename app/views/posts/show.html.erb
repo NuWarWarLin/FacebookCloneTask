@@ -5,7 +5,8 @@
         <div class="col-8 mt-4">
             <div class="card text-center shadow mb-5 bg-white rounded">
                 <div class="card-header font-italic">
-                    by <%= @post.user.username if post.user %>
+                    by <%= @post.user.username if @post.user %>
+                    <%= link_to gravatar_for(@post.user), user_path(@post.user) %>
                 </div>
                 <div class="card-body">
                     <div class="card-text text-left">
