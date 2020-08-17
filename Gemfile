@@ -27,6 +27,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.8'
+gem 'fog'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
