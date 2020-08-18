@@ -15,7 +15,7 @@ class UsersController < ApplicationController
        @user = User.new(user_params)
        if @user.save
         session[:user_id] = @user.id
-        flash[:notice] = "Welcome to the SocialBook #{@user.username}, you have successfully signed up"
+        flash[:notice] = "Welcome to the Facebook #{@user.username}, you have successfully signed up"
         redirect_to @user
        else
         render 'new'
