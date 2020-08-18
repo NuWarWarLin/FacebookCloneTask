@@ -9,12 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex flex-column">
-    <%= render 'layouts/navigation'%>
-    <div id="page-content">
-      <%= render 'layouts/messages' %>
+  <body>
       <%= yield %>
-    </div>
-    <%= render 'layouts/footer'%>
+      <footer>
+        <p>Copyright &copy; <%= link_to "Nu War War Lin", "https://nuwarwarlin.com" %></p>
+    </footer>
   </body>
 </html>

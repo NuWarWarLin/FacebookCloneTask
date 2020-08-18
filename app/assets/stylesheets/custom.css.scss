@@ -2,6 +2,7 @@
 
 body {
   background-color: #f0f2f5 !important;
+  margin: 0 !important;
 }
 
 .login {
@@ -20,7 +21,7 @@ body {
 
 .login-slogan {
   font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
-  color: #000;
+  color:#2f55a4;
   font-size: 28px;
   font-weight: normal;
   line-height: 32px;
@@ -38,4 +39,53 @@ body {
 .card {
   height: auto !important;
   border-radius: 0.5rem !important;
+}
+
+.navbar {
+  margin-top: 0;
+  background-color: #2f55a4 !important;
+  height: 3.7rem;
+  font-size: 0.9rem;
+  margin-bottom: 5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: white !important;
+}
+
+.to-right {
+  justify-content: end;
+}
+
+.my-text-brand {
+  color:white !important;
+  padding-left: 2rem;
+  font-size: 2rem !important;
+}
+
+.my-text {
+  font-size: 1.25rem !important;
+  color:white !important;
+}
+
+.nav-link:hover {
+  border-radius: 1rem;
+  background-color: #f2f2f2;
+}
+
+footer {
+  width: 100%;
+  height: 52px;
+  bottom: 0 !important;
+  position: fixed;
+  background-color:#2f55a4;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin-bottom: 0;
+  color:white;
 }
