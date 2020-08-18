@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     before_action :require_same_user, only: [:edit, :update, :destroy]
 
     def index
-        @users = User.paginate(page: params[:page], per_page: 5)
+        @users = User.all
     end
 
     def new
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
        if @user.save
         session[:user_id] = @user.id
         flash[:notice] = "Welcome to the SocialBook #{@user.username}, you have successfully signed up"
-        redirect_to posts_path
+        redirect_to @user
        else
         render 'new'
        end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         @user.destroy
         session[:user_id] = nil
         flash[:notice] = "Account and all associated posts successfully deleted"
-        redirect_to posts_path
+        redirect_to root_path
     end
 
     def edit
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        @posts = @user.posts.paginate(page: params[:page], per_page: 5)
+        @images = @user.images
     end
 
     private

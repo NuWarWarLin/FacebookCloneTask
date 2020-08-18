@@ -1,9 +1,7 @@
-<h1 class="text-center mt-4">SocialBook Bloggers</h1>
+<%= render 'shared/navigation' %>
+<%= render 'shared/messages' %>
 
-<div class="flickr_pagination">
-    <%= will_paginate @users, :container => false %>
-</div>
-
+<h1 class="text-center mt-4">Facebook Users</h1>
 <div class="container">
   <% @users.each do |user| %>
   <div class="row justify-content-md-center">
@@ -16,7 +14,7 @@
           <h5 class="card-title">
             <%= link_to gravatar_for(user, size: 150), user %>
           </h5>
-          <p class="card-text"><%= pluralize(user.posts.count, "post") %></p>
+          <p class="card-text"><%= pluralize(user.images.count, "post") %></p>
           <%= link_to 'View profile', user, class: "btn btn-outline-success" %>
           <% if logged_in? and user == current_user %>
             <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-info" %>
@@ -29,8 +27,4 @@
     </div>
   </div>
   <% end %>
-</div>
-
-<div class="flickr_pagination mb-4">
-    <%= will_paginate @users, :container => false %>
 </div>
