@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  resources :images
-  root 'pages#home'
-  get 'about', to:'pages#about'
+  resources :images do
+    collection do
+      post :confirm
+    end
+  end
+  
+  root 'sessions#new'
+
   resources :posts 
+
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
