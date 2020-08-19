@@ -62,19 +62,19 @@ class ImagesController < ApplicationController
 
   private
     
-    def set_image
-      @image = Image.find(params[:id])
-    end
+  def set_image
+    @image = Image.find(params[:id])
+  end
 
-    def image_params
-      params.require(:image).permit(:name, :picture, :picture_cache, :user_id)
-    end
+  def image_params
+    params.require(:image).permit(:name, :picture, :picture_cache, :user_id)
+  end
 
-    def require_same_user
-      if current_user != @image.user
-        flash[:alert] = "You can only edit or delete your own posts"
-        redirect_to @image
-      end
+  def require_same_user
+    if current_user != @image.user
+      flash[:alert] = "You can only edit or delete your own posts"
+      redirect_to @image
     end
+  end
 
 end
